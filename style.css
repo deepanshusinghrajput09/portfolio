@@ -2029,9 +2029,36 @@ section{
     width:100%;
 }
 
-@media(max-width:768px){
-    .achievement-grid,
-    .why-grid{
-        grid-template-columns:1fr !important;
+@media (max-width:768px){
+
+    .hero{
+        padding:120px 20px 70px;
     }
+
+    .hero-right{
+        margin-top:0;
+        width:100%;
+    }
+
+    .hero-image{
+        margin-top:20px;
+    }
+
+}
+
+.hero-right{
+    width:40%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    margin-top:-100px;
+}
+
+@media (max-width:768px){
+
+    .hero-right{
+        width:100%;
+        margin-top:20px;
+    }
+
 }
