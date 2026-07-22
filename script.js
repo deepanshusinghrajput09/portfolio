@@ -129,7 +129,7 @@ document.addEventListener("mousemove",(e)=>{
 }
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
+const navLinksItems = document.querySelectorAll(".nav-links a");
 
 window.addEventListener("scroll",()=>{
 
@@ -145,7 +145,7 @@ window.addEventListener("scroll",()=>{
 
     });
 
-    navLinks.forEach((link)=>{
+    navLinksItems.forEach((link)=>{
 
         link.classList.remove("active");
 
@@ -356,3 +356,36 @@ document.addEventListener("play", function(e){
     }
 
 }, true);
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
+const menuIcon = menuToggle.querySelector("i");
+
+menuToggle.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+    if(navLinks.classList.contains("active")){
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
+        document.body.style.overflow = "hidden";
+    }else{
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+        document.body.style.overflow = "auto";
+    }
+
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navLinks.classList.remove("active");
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+        document.body.style.overflow="auto";
+
+    });
+
+});
