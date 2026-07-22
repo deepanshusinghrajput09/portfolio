@@ -1990,3 +1990,120 @@ body{
 }
 
 }
+/* Hamburger */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:#fff;
+    cursor:pointer;
+    z-index:1001;
+}
+
+@media (max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+    position:fixed;
+    top:80px;
+    right:-100%;
+    width:250px;
+    height:calc(100vh - 80px);
+    background:#0f0f0f;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    gap:30px;
+    padding-top:40px;
+    transition:.35s;
+}
+
+.nav-links.active{
+    right:0;
+}
+
+}
+/* ==========================
+   PREMIUM MOBILE NAVBAR
+========================== */
+
+.menu-toggle{
+    display:none;
+    cursor:pointer;
+    font-size:28px;
+    color:#fff;
+    transition:.3s;
+    z-index:1100;
+}
+
+.menu-toggle:hover{
+    color:#4F8CFF;
+}
+
+@media(max-width:768px){
+
+.navbar{
+    padding:18px 25px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:270px;
+
+    height:100vh;
+
+    background:rgba(15,15,15,.92);
+
+    backdrop-filter:blur(18px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    transition:.4s ease;
+
+    z-index:1000;
+
+    box-shadow:-10px 0 30px rgba(0,0,0,.35);
+
+}
+
+.nav-links.active{
+
+    right:0;
+
+}
+
+.nav-links li{
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    font-size:20px;
+
+    color:#fff;
+
+}
+
+}
