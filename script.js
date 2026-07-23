@@ -389,3 +389,61 @@ document.querySelectorAll(".nav-links a").forEach(link=>{
     });
 
 });
+const form = document.getElementById("projectForm");
+
+if(form){
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const btn = document.getElementById("sendBtn");
+
+btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+btn.disabled = true;
+
+emailjs.send("service_4hb0weh","template_56g1a0e",{
+
+name:document.getElementById("name").value,
+
+business:document.getElementById("business").value,
+
+email:document.getElementById("email").value,
+
+service:document.getElementById("service").value,
+
+budget:document.getElementById("budget").value,
+
+message:document.getElementById("message").value
+
+})
+
+.then(()=>{
+
+document.getElementById("status").innerHTML =
+"✅ Project request sent successfully!";
+
+form.reset();
+
+btn.innerHTML='<span>Start Your Project</span><i class="fa-solid fa-arrow-right"></i>';
+
+
+btn.disabled=false;
+
+})
+
+.catch(()=>{
+
+document.getElementById("status").innerHTML =
+"❌ Something went wrong.";
+
+btn.innerHTML='<span>Start Your Project</span><i class="fa-solid fa-arrow-right"></i>';
+
+
+btn.disabled=false;
+
+});
+
+});
+
+}
